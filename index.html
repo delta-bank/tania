@@ -8,7 +8,7 @@
     <style>
         :root {
             --bg: #000000;
-            --card-bg: #0a0a0a;
+            --card-color: #1e2748; /* Il tuo nuovo colore */
             --accent: #00f2ff;
             --text-dim: #666;
         }
@@ -65,20 +65,23 @@
         /* CONTENT AREA */
         .main { flex: 1; padding: 0 25px; display: flex; flex-direction: column; align-items: center; }
 
-        /* TESSERA MODERNA */
+        /* TESSERA CON COLORE #1e2748 */
         .card {
             width: 100%;
             max-width: 340px;
             aspect-ratio: 1.58 / 1;
-            background: linear-gradient(145deg, #111, #000);
+            background-color: var(--card-color);
+            /* Sfumatura leggera per dare profondità al blu */
+            background-image: radial-gradient(circle at top left, rgba(255,255,255,0.05), transparent);
             border-radius: 20px;
             padding: 25px;
             position: relative;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            border: 1px solid #1a1a1a;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+            overflow: hidden;
         }
 
         .card-chip {
@@ -88,10 +91,10 @@
             border-radius: 5px;
         }
 
-        .card-number { font-size: 18px; letter-spacing: 3px; color: #fff; font-family: monospace; }
+        .card-number { font-size: 18px; letter-spacing: 3px; color: #fff; font-family: monospace; z-index: 2; }
         
-        .card-bottom { display: flex; justify-content: space-between; align-items: flex-end; }
-        .card-name-txt { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--text-dim); }
+        .card-bottom { display: flex; justify-content: space-between; align-items: flex-end; z-index: 2; }
+        .card-name-txt { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.6); }
 
         /* TASTI AZIONE */
         .actions { display: flex; gap: 50px; margin-top: 50px; }
@@ -141,21 +144,21 @@
 
     <div class="balance-section">
         <p class="label">Total Balance</p>
-        <h1 class="balance">€ 1.250,00</h1>
+        <h1 class="balance">€ 1.000,00</h1>
     </div>
 
     <main class="main">
         <div class="card">
             <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                 <div class="card-chip"></div>
-                <i class="fa-solid fa-wifi" style="transform: rotate(90deg); color: #333;"></i>
+                <i class="fa-solid fa-wifi" style="transform: rotate(90deg); color: rgba(255,255,255,0.2);"></i>
             </div>
 
-            <div class="card-number">•••• •••• •••• 1055</div>
+            <div class="card-number">•••• •••• •••• 1002</div>
 
             <div class="card-bottom">
-                <p class="card-name-txt">LEONARDO SORU</p>
-                <p style="font-size: 11px; font-weight: bold;">06/50</p>
+                <p class="card-name-txt">TANIA CERRONE</p>
+                <p style="font-size: 11px; font-weight: bold; color: white;">06/50</p>
             </div>
         </div>
 
@@ -175,7 +178,7 @@
     <nav class="nav-bar">
         <a href="#" class="nav-link active-link"><i class="fa-solid fa-house"></i></a>
         <a href="#" class="nav-link"><i class="fa-solid fa-chart-simple"></i></a>
-        <a href="#" class="nav-item"><i class="fa-solid fa-user"></i></a>
+        <a href="#" class="nav-link"><i class="fa-solid fa-user"></i></a>
     </nav>
 
 </body>
